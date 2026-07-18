@@ -1,4 +1,4 @@
-import{R as e}from"./index-DPT5KrfL.js";import{p as r,i as a}from"./ArBelleViePage-CS1zR4a0.js";import{S as s}from"./SectionHeading-BSVQLpyK.js";import{m as l}from"./proxy-CraBC65L.js";import{c}from"./phone-Cuhhdzme.js";/**
+import{R as e}from"./index-DlsV91Y8.js";import{p as r,i as a}from"./ArBelleViePage-CecaC8lU.js";import{S as s}from"./SectionHeading-D_GMYCjw.js";import{m as l}from"./proxy-RwXM9hnI.js";import{c}from"./phone-C2jcEJHq.js";/**
  * @license lucide-react v1.24.0 - ISC
  *
  * This source code is licensed under the ISC license.
