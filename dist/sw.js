@@ -1,4 +1,4 @@
-const CACHE_NAME = "ssp-pwa-v3";
+const CACHE_NAME = "ssp-pwa-v4";
 const APP_SHELL = [
   "/",
   "/manifest.webmanifest",
@@ -47,6 +47,23 @@ self.addEventListener("fetch", (event) => {
           return response;
         })
         .catch(() => caches.match("/"))
+    );
+    return;
+  }
+
+  if (["script", "style", "worker"].includes(event.request.destination)) {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (!response || !response.ok || new URL(event.request.url).origin !== self.location.origin) {
+            return response;
+          }
+
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+          return response;
+        })
+        .catch(() => caches.match(event.request))
     );
     return;
   }
