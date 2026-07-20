@@ -32,11 +32,86 @@
         document.head.appendChild(link);
       })();
     </script>
+    <style>
+      #ar-static-boot {
+        position: fixed;
+        inset: 0;
+        z-index: 2147483647;
+        min-height: 100svh;
+        overflow: hidden;
+        color: #fff;
+        background: #031a2e;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      #ar-static-boot img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      #ar-static-boot::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(180deg, rgba(3, 26, 46, 0.44), rgba(3, 26, 46, 0.86)),
+          linear-gradient(90deg, rgba(3, 26, 46, 0.52), rgba(3, 26, 46, 0.14) 58%);
+      }
+
+      .ar-static-copy {
+        position: absolute;
+        left: 18px;
+        right: 18px;
+        bottom: 92px;
+        z-index: 1;
+        display: grid;
+        gap: 10px;
+      }
+
+      .ar-static-copy span {
+        color: #ff7200;
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .ar-static-copy h1 {
+        max-width: 360px;
+        margin: 0;
+        color: #fff;
+        font-size: clamp(2.65rem, 14vw, 4.1rem);
+        font-weight: 900;
+        line-height: 0.96;
+        letter-spacing: 0;
+      }
+    </style>
     <title>SSP Group | Premium Real Estate</title>
-    <script type="module" crossorigin src="/assets/index-BeykjgSy.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BcaIS7wk.css">
+    <script type="module" crossorigin src="/assets/index-BQSIXuW9.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DJKeOUxZ.css">
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      (() => {
+        const path = location.pathname.replace(/\/$/, "");
+        if (path !== "/projects/ar-belle-vie-phase-1") return;
+
+        const isMobile = matchMedia("(max-width: 720px)").matches;
+        const image = isMobile ? "/images/Hero-Section-BG_1_mobile.webp" : "/images/Hero-Section-BG_1_opt.webp";
+        document.getElementById("root").innerHTML = `
+          <div id="ar-static-boot" aria-label="AR Belle Vie Phase 1">
+            <img src="${image}" alt="" width="390" height="844" fetchpriority="high" decoding="async" />
+            <div class="ar-static-copy">
+              <span>Premium villas near Whitefield</span>
+              <h1>AR Belle Vie Phase 1</h1>
+            </div>
+          </div>
+        `;
+      })();
+    </script>
   </body>
 </html>
